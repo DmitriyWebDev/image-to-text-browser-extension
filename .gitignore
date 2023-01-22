@@ -5,7 +5,7 @@
 node_modules/
 coverage/
 .npmrc
-.eng.traineddata
+/eng.traineddata
 
 # common.gitignore --- END
 
