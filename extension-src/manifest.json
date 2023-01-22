@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Image to text",
+  "description": "Helps to get text from the images",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://*.avito.ru/*"],
+      "js": ["./page-content-script.js"]
+    }
+  ],
+  "icons": {
+    "16": "./images/logo-16.png",
+    "32": "./images/logo-32.png",
+    "128": "./images/logo-128.png"
+  }
+}
