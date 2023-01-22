@@ -3,13 +3,15 @@ document.body.addEventListener('dblclick', async (event) => {
 
   if (event.target !== phoneImg) return;
 
+  document.body.style.cursor = 'wait';
+
   const response = await fetch('http://localhost:3001/recognize-img-text', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify({ imgSrc: phoneImg.getAttribute('src') }),
   });
 
-  let { phoneText } = await response.json();
+  const { phoneText } = await response.json();
 
   const inputElement = document.createElement('input');
   inputElement.setAttribute('value', phoneText);
@@ -21,6 +23,8 @@ document.body.addEventListener('dblclick', async (event) => {
   inputElement.remove();
 
   alert(`Phone copied - ${phoneText}`);
+
+  document.body.style.cursor = '';
 });
 
 
